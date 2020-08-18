@@ -28,7 +28,11 @@ $ java -jar target/uberjar/hexy-0.1.0-SNAPSHOT-standalone.jar ./hello.txt
 
 ### Bugs
 
-Larger files seem to produce differences in output from `hexdump`.
+Larger files seem to produce differences in output from `hexdump`. Try reproducing via something like this:
+
+```
+diff <(hexdump target/uberjar/hexy-0.1.0-SNAPSHOT-standalone.jar) <(java -jar target/uberjar/hexy-0.1.0-SNAPSHOT-standalone.jar ./target/uberjar/hexy-0.1.0-SNAPSHOT-standalone.jar)
+```
 
 ### Any Other Sections
 ### That You Think
